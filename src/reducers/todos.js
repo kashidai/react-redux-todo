@@ -1,4 +1,5 @@
 const todos = (state = [], action) => {
+    console.log(action);
     switch (action.type) {
         case "ADD_TODO":
             return [
@@ -8,7 +9,17 @@ const todos = (state = [], action) => {
                     text: action.text,
                     completed: false
                 }
+
             ];
+        case "DELETE_TODO":
+            console.log("hi");
+         return state.filter((value)=> value.text !== action.text);
+
+
+
+            return
+
+
         default:
             return state;
     }
